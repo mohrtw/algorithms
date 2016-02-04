@@ -72,6 +72,16 @@ def SortingTest(sortFcn):
             xs = sortFcn([2,1,0])
             self.assertEqual(xs, [0,1,2])
             
+        def test_ten_numbers(self):
+            xs = sortFcn([5,13,-3,37,5,3,4,1,0,-20])
+            self.assertEqual(xs,[-20,-3,0,1,3,4,5,5,13,37])
+            
+        def test_same_as_sorted(self):
+            from random import sample
+            xs = sample(range(-1000,1000),100)
+            self.assertEqual(sortFcn(xs),sorted(xs))
+            
+            
     return sortTest
     
 
