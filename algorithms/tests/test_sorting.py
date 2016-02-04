@@ -2,12 +2,11 @@ import unittest
 from unittest import TestCase
 
 from algorithms.sorting.quickSort import quickSort
-
 from algorithms.sorting.mergeSort import mergeSort
-
 from algorithms.sorting.insertionSort import insertionSort
-
 from algorithms.sorting.selectionSort import selectionSort
+from algorithms.sorting.bubbleSort import bubbleSort
+
 
 
 def SortingTest(sortFcn):
@@ -89,6 +88,7 @@ qsortTest = SortingTest(quickSort)
 mergesortTest = SortingTest(mergeSort)
 insertionSortTest = SortingTest(insertionSort)
 selectionSortTest = SortingTest(selectionSort)
+bubbleSortTest = SortingTest(bubbleSort)
 
 if __name__ == '__main__':
     unittest.main()
