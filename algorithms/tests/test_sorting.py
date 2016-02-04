@@ -6,7 +6,7 @@ from algorithms.sorting.mergeSort import mergeSort
 from algorithms.sorting.insertionSort import insertionSort
 from algorithms.sorting.selectionSort import selectionSort
 from algorithms.sorting.bubbleSort import bubbleSort
-
+from algorithms.sorting.heapSort import heapSort
 
 
 def SortingTest(sortFcn):
@@ -78,7 +78,9 @@ def SortingTest(sortFcn):
         def test_same_as_sorted(self):
             from random import sample
             xs = sample(range(-1000,1000),100)
-            self.assertEqual(sortFcn(xs),sorted(xs))
+            ys = sorted(xs)
+            zs = sortFcn(xs)
+            self.assertEqual(ys,zs)
             
             
     return sortTest
@@ -89,6 +91,7 @@ mergesortTest = SortingTest(mergeSort)
 insertionSortTest = SortingTest(insertionSort)
 selectionSortTest = SortingTest(selectionSort)
 bubbleSortTest = SortingTest(bubbleSort)
+heapSortTest = SortingTest(heapSort)
 
 if __name__ == '__main__':
     unittest.main()
