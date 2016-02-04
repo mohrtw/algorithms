@@ -1,6 +1,6 @@
 import unittest
 from unittest import TestCase
-from algorithms.sorting.sorting import merge
+from algorithms.sorting.mergeSort import merge
 
 class MergeTest(TestCase):
     

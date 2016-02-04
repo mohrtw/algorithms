@@ -1,9 +1,9 @@
 import unittest
 from unittest import TestCase
 
-from algorithms.sorting.sorting import quickSort
+from algorithms.sorting.quickSort import quickSort
 
-from algorithms.sorting.sorting import mergeSort
+from algorithms.sorting.mergeSort import mergeSort
 
 
 def SortingTest(sortFcn):
