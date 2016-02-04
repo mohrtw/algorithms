@@ -32,3 +32,26 @@ def quickSort(xs):
     xs.extend(rightPartition)
     
     return xs
+
+def merge(xs, ys):
+    zs = []    
+
+    i, j = 0, 0
+    n, m = len(xs), len(ys)
+
+    while i<n or j<m:
+        if i>=n:
+            zs.append(ys[j])
+            j += 1
+        elif j>=m:
+            zs.append(xs[i])
+            i += 1
+        else:
+            if xs[i]<=ys[j]:
+                zs.append(xs[i])
+                i += 1
+            else:
+                zs.append(ys[j])
+                j += 1
+    
+    return(zs)
