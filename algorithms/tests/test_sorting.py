@@ -3,6 +3,9 @@ from unittest import TestCase
 
 from algorithms.sorting.sorting import quickSort
 
+from algorithms.sorting.sorting import mergeSort
+
+
 def SortingTest(sortFcn):
     
     class sortTest(TestCase):
@@ -69,6 +72,8 @@ def SortingTest(sortFcn):
     
 
 qsortTest = SortingTest(quickSort)
+
+mergesortTest = SortingTest(mergeSort)
 
 if __name__ == '__main__':
     unittest.main()
