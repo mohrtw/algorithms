@@ -7,6 +7,8 @@ from algorithms.sorting.mergeSort import mergeSort
 
 from algorithms.sorting.insertionSort import insertionSort
 
+from algorithms.sorting.selectionSort import selectionSort
+
 
 def SortingTest(sortFcn):
     
@@ -74,9 +76,9 @@ def SortingTest(sortFcn):
     
 
 qsortTest = SortingTest(quickSort)
-
 mergesortTest = SortingTest(mergeSort)
 insertionSortTest = SortingTest(insertionSort)
+selectionSortTest = SortingTest(selectionSort)
 
 if __name__ == '__main__':
     unittest.main()
