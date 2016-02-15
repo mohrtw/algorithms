@@ -3,6 +3,7 @@ Code to implement various algorithms.
 
 ## Data structures
 * [Graph](https://github.com/mohrtw/algorithms/blob/master/algorithms/dataStructures/graph.py)
+* [Stack](https://github.com/mohrtw/algorithms/blob/master/algorithms/dataStructures/stack.py)
 
 ## Graphs
 * [breadth-first search - shortest distance](https://github.com/mohrtw/algorithms/blob/master/algorithms/graphs/breadthFirstSearch.py)
