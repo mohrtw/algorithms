@@ -115,8 +115,17 @@ class DoublyLinkedList():
     def delete(self, position):
 
         if position == 0:
-            self.head = self.head.next
-            self.head.previous = None
+            if self.head == self.tail:
+                self.head = None
+                self.tail = None
+
+            elif self.head.next == self.tail:
+                self.head = self.tail
+                self.tail.previous = None
+
+            else:
+                self.head = self.head.next
+                self.head.previous = None
 
         else:
             curNode = self.head

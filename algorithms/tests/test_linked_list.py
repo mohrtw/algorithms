@@ -185,6 +185,13 @@ class linked_list_delete_Test(TestCase):
 
         self.ll = LinkedList(n3)
 
+    def test_delete_only_element(self):
+        ll = LinkedList()
+        ll.insert_start(1)
+        ll.delete(0)
+
+        self.assertIsNone(ll.head)
+
     def test_delete_head(self):
         self.ll.delete(0)
 

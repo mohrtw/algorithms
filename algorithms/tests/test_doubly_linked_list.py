@@ -263,6 +263,14 @@ class doubly_linked_list_delete_Test(TestCase):
 
         self.ll = DoublyLinkedList(n3)
 
+    def test_delete_only_element(self):
+        dll = DoublyLinkedList()
+        dll.insert_start(1)
+        dll.delete(0)
+
+        self.assertIsNone(dll.head)
+        self.assertIsNone(dll.tail)
+
     def test_delete_head(self):
         self.ll.delete(0)
 
