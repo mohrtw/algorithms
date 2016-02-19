@@ -29,6 +29,9 @@ class LinkedList():
 
             return curNode
 
+    def get_head(self):
+        return self.head
+
     def insert_end(self, data, next_=None):
         n = Node(data, next_)
         # base case

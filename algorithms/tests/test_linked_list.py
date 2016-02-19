@@ -66,6 +66,19 @@ class get_element_Test(TestCase):
         n = self.ll.get_element(2)
         self.assertEqual(1, n.data)
 
+    def test_get_head_single_element_list(self):
+        n = Node(1)
+        ll2 = LinkedList(n)
+
+        data = ll2.get_head()
+
+        self.assertEqual(n, data)
+
+    def test_get_head_multiple_element_list(self):
+        n = self.ll.get_head()
+
+        self.assertEqual('a', n.data)
+
 
 class empty_linked_list_Test(TestCase):
 
