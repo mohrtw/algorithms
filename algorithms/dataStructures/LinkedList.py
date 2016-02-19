@@ -10,6 +10,25 @@ class LinkedList():
     def __init__(self, head=None):
         self.head = head
 
+    def get_element(self, position):
+
+        if self.head is None:
+            return None
+
+        elif position == 0:
+            return self.head
+
+        # transverse linked list until the position is reached
+        else:
+            curNode = self.head
+            pos = 1
+
+            while pos <= position:
+                curNode = curNode.next
+                pos += 1
+
+            return curNode
+
     def insert_end(self, data, next_=None):
         n = Node(data, next_)
         # base case

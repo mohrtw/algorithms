@@ -26,6 +26,25 @@ class DoublyLinkedList():
             while self.tail.next:
                 self.tail = self.tail.next
 
+    def get_element(self, position):
+
+        if self.head is None:
+            return None
+
+        elif position == 0:
+            return self.head
+
+        # transverse linked list until the position is reached
+        else:
+            curNode = self.head
+            pos = 1
+
+            while pos <= position:
+                curNode = curNode.next
+                pos += 1
+
+            return curNode
+
     def insert_end(self, data):
         n = DoublyLinkedNode(data, next_=None, previous_=self.tail)
 

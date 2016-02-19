@@ -58,6 +58,28 @@ class doubly_linked_list_creation_Test(TestCase):
         self.assertEqual(1, ll.head.next.next.data)
 
 
+class get_element_Test(TestCase):
+
+    def setUp(self):
+        n = DoublyLinkedNode(1)
+        n2 = DoublyLinkedNode(2, n)
+        n3 = DoublyLinkedNode('a', n2)
+
+        self.ll = DoublyLinkedList(n3)
+
+    def test_access_first_element(self):
+        n = self.ll.get_element(0)
+        self.assertEqual('a', n.data)
+
+    def test_access_second_element(self):
+        n = self.ll.get_element(1)
+        self.assertEqual(2, n.data)
+
+    def test_access_third_element(self):
+        n = self.ll.get_element(2)
+        self.assertEqual(1, n.data)
+
+
 class empty_doubly_linked_list_Test(TestCase):
 
     def setUp(self):
