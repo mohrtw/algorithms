@@ -5,6 +5,7 @@ Code to implement various algorithms.
 * [Graph](https://github.com/mohrtw/algorithms/blob/master/algorithms/dataStructures/graph.py)
 * [Linked List](https://github.com/mohrtw/algorithms/tree/master/algorithms/dataStructures/LinkedList.py)
 * [Doubly Linked List](https://github.com/mohrtw/algorithms/tree/master/algorithms/dataStructures/DoublyLinkedList.py)
+* [Queue](https://github.com/mohrtw/algorithms/blob/master/algorithms/dataStructures/queue.py)
 * [Stack](https://github.com/mohrtw/algorithms/blob/master/algorithms/dataStructures/stack.py)
 
 ## Graphs
