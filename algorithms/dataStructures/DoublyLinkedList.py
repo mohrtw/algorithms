@@ -45,6 +45,12 @@ class DoublyLinkedList():
 
             return curNode
 
+    def get_head(self):
+        return self.head
+
+    def get_tail(self):
+        return self.tail
+
     def insert_end(self, data):
         n = DoublyLinkedNode(data, next_=None, previous_=self.tail)
 
