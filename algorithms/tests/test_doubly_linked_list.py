@@ -260,6 +260,7 @@ class doubly_linked_list_delete_Test(TestCase):
         n = DoublyLinkedNode(1)
         n2 = DoublyLinkedNode(2, n)
         n3 = DoublyLinkedNode('a', n2)
+        # 'a' 2 1
 
         self.ll = DoublyLinkedList(n3)
 
@@ -271,7 +272,7 @@ class doubly_linked_list_delete_Test(TestCase):
         self.assertIsNone(dll.head)
         self.assertIsNone(dll.tail)
 
-    def test_delete_head(self):
+    def test_delete_start(self):
         self.ll.delete(0)
 
         self.assertEqual(2, self.ll.head.data)
@@ -279,7 +280,7 @@ class doubly_linked_list_delete_Test(TestCase):
         self.assertIsNone(self.ll.head.next.next)
         self.assertEqual(1, self.ll.tail.data)
 
-    def test_delete_head_correct_previous(self):
+    def test_delete_start_correct_previous(self):
         self.ll.delete(0)
 
         self.assertEqual(2, self.ll.head.next.previous.data)
@@ -313,6 +314,47 @@ class doubly_linked_list_delete_Test(TestCase):
 
     def test_delete_end_correct_previous(self):
         self.ll.delete(2)
+
+        self.assertEqual('a', self.ll.head.next.previous.data)
+        self.assertEqual('a', self.ll.tail.previous.data)
+        self.assertIsNone(self.ll.head.previous)
+
+    def test_delete_head_single_element(self):
+        dll = DoublyLinkedList()
+        dll.insert_start(1)
+        dll.delete_head()
+
+        self.assertIsNone(dll.head)
+        self.assertIsNone(dll.tail)
+
+    def test_delete_head_multiple_elements(self):
+        self.ll.delete_head()
+
+        self.assertEqual(2, self.ll.head.data)
+        self.assertEqual(1, self.ll.head.next.data)
+        self.assertIsNone(self.ll.head.next.next)
+        self.assertEqual(1, self.ll.tail.data)
+
+        self.assertEqual(2, self.ll.head.next.previous.data)
+        self.assertEqual(2, self.ll.tail.previous.data)
+        self.assertIsNone(self.ll.head.previous)
+
+    def test_delete_tail_single_element(self):
+        dll = DoublyLinkedList()
+        dll.insert_start(1)
+        dll.delete_tail()
+
+        self.assertIsNone(dll.head)
+        self.assertIsNone(dll.tail)
+
+    def test_delete_tail_multiple_elements(self):
+        self.ll.delete_tail()
+
+        self.assertIsNone(self.ll.head.next.next)
+        self.assertEqual(2, self.ll.head.next.data)
+        self.assertEqual('a', self.ll.head.data)
+        self.assertEqual(2, self.ll.tail.data)
+        self.assertIsNone(self.ll.tail.next)
 
         self.assertEqual('a', self.ll.head.next.previous.data)
         self.assertEqual('a', self.ll.tail.previous.data)

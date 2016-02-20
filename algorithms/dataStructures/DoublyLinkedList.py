@@ -141,6 +141,33 @@ class DoublyLinkedList():
             if curNode.next:
                 curNode.next.previous = curNode
 
+    def delete_head(self):
+        if self.head == self.tail:
+            self.head = None
+            self.tail = None
+
+        elif self.head.next == self.tail:
+            self.head = self.tail
+            self.tail.previous = None
+
+        else:
+            self.head = self.head.next
+            self.head.previous = None
+
+    def delete_tail(self):
+        if self.head == self.tail:
+            self.head = None
+            self.tail = None
+
+        elif self.head.next == self.tail:
+            self.head.next = None
+            
+            self.tail = self.head
+
+        else:
+            self.tail = self.tail.previous
+            self.tail.next = None
+
     def display(self):
         curNode = self.head
         while curNode:
