@@ -161,7 +161,6 @@ class DoublyLinkedList():
 
         elif self.head.next == self.tail:
             self.head.next = None
-            
             self.tail = self.head
 
         else:
