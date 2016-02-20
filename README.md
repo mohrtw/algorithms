@@ -3,6 +3,7 @@ Code to implement various algorithms.
 
 ## Data structures
 * [Graph](https://github.com/mohrtw/algorithms/blob/master/algorithms/dataStructures/graph.py)
+* [Deque](https://github.com/mohrtw/algorithms/blob/master/algorithms/dataStructures/Deque.py)
 * [Linked List](https://github.com/mohrtw/algorithms/tree/master/algorithms/dataStructures/LinkedList.py)
 * [Doubly Linked List](https://github.com/mohrtw/algorithms/tree/master/algorithms/dataStructures/DoublyLinkedList.py)
 * [Queue](https://github.com/mohrtw/algorithms/blob/master/algorithms/dataStructures/queue.py)
