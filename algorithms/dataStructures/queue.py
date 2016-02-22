@@ -15,3 +15,6 @@ class Queue():
 
     def peek(self):
         return self.items.get_head().data
+
+    def is_empty(self):
+        return self.items.is_empty()

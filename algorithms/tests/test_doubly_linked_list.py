@@ -385,5 +385,24 @@ class doubly_linked_list_print_Test(TestCase):
             sys.stdout = saved_stdout
 
 
+class is_empty_Test(TestCase):
+
+    def setUp(self):
+        self.dll = DoublyLinkedList()
+
+    def test_is_empty_on_empty_list(self):
+        self.assertTrue(self.dll.is_empty())
+
+    def test_is_empty_on_single_item(self):
+        self.dll.insert_end(1)
+        self.assertFalse(self.dll.is_empty())
+
+    def test_is_empty_on_multiple_items(self):
+        self.dll.insert_end(1)
+        self.dll.insert_end(2)
+        self.dll.insert_end(3)
+        self.assertFalse(self.dll.is_empty())
+
+
 if __name__ == '__main__':
     unittest.main()

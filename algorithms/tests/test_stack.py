@@ -48,5 +48,45 @@ class stackTest(TestCase):
         self.s.push(4)
         self.assertEqual(4, self.s.items[1])
 
+    def test_is_empty_on_empty_stack(self):
+        self.assertTrue(self.s.is_empty())
+
+    def test_is_empty_on_single_item(self):
+        self.s.push(1)
+        self.assertFalse(self.s.is_empty())
+
+    def test_is_empty_on_multiple_items(self):
+        self.s.push(1)
+        self.s.push('a')
+        self.s.push(5)
+        self.assertFalse(self.s.is_empty())
+
+    def test_peek_single_element_queue(self):
+        self.s.push(1)
+        data = self.s.peek()
+
+        self.assertEqual(1, data)
+
+    def test_peek_multiple_items(self):
+        self.s.push(1)
+        self.s.push(2)
+        self.s.push(3)
+        self.s.push('a')
+
+        data = self.s.peek()
+        self.assertEqual('a', data)
+        self.s.pop()
+
+        data = self.s.peek()
+        self.assertEqual(3, data)
+        self.s.pop()
+
+        data = self.s.peek()
+        self.assertEqual(2, data)
+        self.s.pop()
+
+        data = self.s.peek()
+        self.assertEqual(1, data)
+
 if __name__ == '__main__':
     unittest.main()

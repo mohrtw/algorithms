@@ -81,6 +81,19 @@ class queue_Test(TestCase):
         data = self.q.peek()
         self.assertEqual('a', data)
 
+    def test_is_empty_on_empty_queue(self):
+        self.assertTrue(self.q.is_empty())
+
+    def test_is_empty_on_single_item(self):
+        self.q.enqueue(1)
+        self.assertFalse(self.q.is_empty())
+
+    def test_is_empty_on_multiple_items(self):
+        self.q.enqueue(1)
+        self.q.enqueue('a')
+        self.q.enqueue(5)
+        self.assertFalse(self.q.is_empty())
+
 
 if __name__ == '__main__':
     unittest.main()

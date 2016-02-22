@@ -172,3 +172,6 @@ class DoublyLinkedList():
         while curNode:
             print(curNode.data)
             curNode = curNode.next
+
+    def is_empty(self):
+        return self.head is None
