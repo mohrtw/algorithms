@@ -2,6 +2,7 @@
 Code to implement various algorithms.
 
 ## Data structures
+* [Binary Tree](https://github.com/mohrtw/algorithms/blob/master/algorithms/dataStructures/BinaryTree.py)
 * [Graph](https://github.com/mohrtw/algorithms/blob/master/algorithms/dataStructures/graph.py)
 * [Deque](https://github.com/mohrtw/algorithms/blob/master/algorithms/dataStructures/Deque.py)
 * [Linked List](https://github.com/mohrtw/algorithms/tree/master/algorithms/dataStructures/LinkedList.py)
