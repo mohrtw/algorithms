@@ -72,6 +72,17 @@ class transversal_Test(TestCase):
 
         self.bt = BinaryTree(n)
 
+    def test_level_order(self):
+        output = ''
+
+        def fcn(value):
+            nonlocal output
+            output += str(value) + ' '
+
+        self.bt.root.transverse(fcn)
+
+        self.assertEqual("1 2 3 4 5 6 7 ", output)
+
     def test_inorder(self):
         output = ''
 

@@ -1,4 +1,6 @@
 from algorithms.dataStructures.stack import Stack
+from algorithms.dataStructures.queue import Queue
+
 
 from algorithms.utils.exceptions import returnValue
 
@@ -15,6 +17,25 @@ class BinaryTreeNode():
             self.left.parent = self
         if self.right:
             self.right.parent = self
+
+    def transverse(self, fcn=None, *args, **kwargs):
+        q = Queue()
+        q.enqueue(self)
+
+        while not q.is_empty():
+            curNode = q.dequeue()
+
+            if curNode.left:
+                q.enqueue(curNode.left)
+
+            if fcn:
+                try:
+                    fcn(curNode.value, *args, **kwargs)
+                except returnValue as v:
+                    return v.value
+
+            if curNode.right:
+                q.enqueue(curNode.right)
 
     def transverse_inorder(self, fcn=None, *args, **kwargs):
         s = Stack()
@@ -75,7 +96,7 @@ class BinaryTree():
             if nodeValue == compValue:
                 raise returnValue(True)
 
-        if self.root.transverse_inorder(raiseReturnTrueIfMatches, value):
+        if self.root.transverse(raiseReturnTrueIfMatches, value):
             return True
 
         return False
