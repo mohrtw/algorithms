@@ -103,5 +103,17 @@ class BinaryTree():
 
     def insert(self, value):
         """transverses the binary tree and inserts value at first empty node"""
-        def insertAtEmptyNode():
-            pass
+        def returnFirstNodeWithEmptyChild(node):
+            if node.left is None or node.right is None:
+                raise returnValue(node)
+
+        if self.root:
+            node = self.root.transverse(returnFirstNodeWithEmptyChild)
+
+            if node.left is None:
+                node.left = BinaryTreeNode(value)
+            elif node.right is None:
+                node.right = BinaryTreeNode(value)
+
+        else:
+            self.root = BinaryTreeNode(value)

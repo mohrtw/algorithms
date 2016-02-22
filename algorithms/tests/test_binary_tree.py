@@ -154,8 +154,9 @@ class contains_Test(TestCase):
 class insert_Test(TestCase):
 
     def test_insert_empty_tree(self):
+        bt = BinaryTree()
         bt.insert(1)
-        assertEqual(1, bt.root.value)
+        self.assertEqual(1, bt.root.value)
 
     def test_insert_just_root_node(self):
         n = BinaryTreeNode(1)
@@ -180,6 +181,32 @@ class insert_Test(TestCase):
         bt.insert(3)
         self.assertEqual(3, bt.root.left.value)
 
+    def test_insert_root_left_and_right_node(self):
+        nr = BinaryTreeNode(3)
+        nl = BinaryTreeNode(2)
+        n = BinaryTreeNode(1, nl, nr)
+        bt = BinaryTree(n)
+
+        bt.insert(4)
+        self.assertEqual(4, bt.root.left.left.value)
+
+    def test_insert_root_two_left_nodes(self):
+        nll = BinaryTreeNode(3)
+        nl = BinaryTreeNode(2, nll)
+        n = BinaryTreeNode(1, nl)
+        bt = BinaryTree(n)
+
+        bt.insert(4)
+        self.assertEqual(4, bt.root.right.value)
+
+    def test_insert_root_two_right_nodes(self):
+        nrr = BinaryTreeNode(3)
+        nr = BinaryTreeNode(2, None, nrr)
+        n = BinaryTreeNode(1, None, nr)
+        bt = BinaryTree(n)
+
+        bt.insert(4)
+        self.assertEqual(4, bt.root.left.value)
 
 
 if __name__ == '__main__':
