@@ -30,7 +30,7 @@ class BinaryTreeNode():
 
             if fcn:
                 try:
-                    fcn(curNode.value, *args, **kwargs)
+                    fcn(curNode, *args, **kwargs)
                 except returnValue as v:
                     return v.value
 
@@ -60,7 +60,7 @@ class BinaryTreeNode():
             else:
                 curNode, = s.pop()
                 try:
-                    fcn(curNode.value, *args, **kwargs)
+                    fcn(curNode, *args, **kwargs)
                 except returnValue as v:
                     return v.value
 
@@ -92,11 +92,16 @@ class BinaryTree():
 
     def contains(self, value):
 
-        def raiseReturnTrueIfMatches(nodeValue, compValue):
-            if nodeValue == compValue:
+        def raiseReturnTrueIfMatches(node, compValue):
+            if node.value == compValue:
                 raise returnValue(True)
 
         if self.root.transverse(raiseReturnTrueIfMatches, value):
             return True
 
         return False
+
+    def insert(self, value):
+        """transverses the binary tree and inserts value at first empty node"""
+        def insertAtEmptyNode():
+            pass

@@ -75,9 +75,9 @@ class transversal_Test(TestCase):
     def test_level_order(self):
         output = ''
 
-        def fcn(value):
+        def fcn(node):
             nonlocal output
-            output += str(value) + ' '
+            output += str(node.value) + ' '
 
         self.bt.root.transverse(fcn)
 
@@ -86,9 +86,9 @@ class transversal_Test(TestCase):
     def test_inorder(self):
         output = ''
 
-        def fcn(value):
+        def fcn(node):
             nonlocal output
-            output += str(value) + ' '
+            output += str(node.value) + ' '
 
         self.bt.root.transverse_inorder(fcn)
 
@@ -149,6 +149,37 @@ class contains_Test(TestCase):
         self.assertFalse(self.bt.contains(45))
         self.assertFalse(self.bt.contains((1, 2)))
         self.assertFalse(self.bt.contains("tree"))
+
+
+class insert_Test(TestCase):
+
+    def test_insert_empty_tree(self):
+        bt.insert(1)
+        assertEqual(1, bt.root.value)
+
+    def test_insert_just_root_node(self):
+        n = BinaryTreeNode(1)
+        bt = BinaryTree(n)
+
+        bt.insert(2)
+        self.assertEqual(2, bt.root.left.value)
+
+    def test_insert_root_and_left_node(self):
+        nl = BinaryTreeNode(2)
+        n = BinaryTreeNode(1, nl)
+        bt = BinaryTree(n)
+
+        bt.insert(3)
+        self.assertEqual(3, bt.root.right.value)
+
+    def test_insert_root_and_right_node(self):
+        nr = BinaryTreeNode(2)
+        n = BinaryTreeNode(1, None, nr)
+        bt = BinaryTree(n)
+
+        bt.insert(3)
+        self.assertEqual(3, bt.root.left.value)
+
 
 
 if __name__ == '__main__':
