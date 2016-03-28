@@ -11,9 +11,14 @@ class Stack(object):
     - is_empty: Returns True if the stack contains no elements.
     """
 
-    def __init__(self):
-        self.items = []
-        self.size = 0
+    def __init__(self, items=[]):
+        """Initializes a new stack object.
+
+        Args:
+            items: A list of items to initialize the stack with.
+                   Defaults to an empty list.
+        """
+        self.items = items[:]
 
     def push(self, item):
         """Pushes an item to the end of the stack.

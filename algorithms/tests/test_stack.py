@@ -88,5 +88,27 @@ class stackTest(TestCase):
         data = self.s.peek()
         self.assertEqual(1, data)
 
+
+class createStacksTest(TestCase):
+
+    def test_create_empty_stack(self):
+        self.stk = Stack()
+
+        self.assertIsInstance(self.stk, Stack)
+        self.assertEqual(self.stk.items, [])
+
+    def test_create_stack_with_one_element(self):
+        self.stk = Stack([1])
+
+        self.assertIsInstance(self.stk, Stack)
+        self.assertEqual(self.stk.items, [1])
+
+
+    def test_create_stack_with_two_elements(self):
+        self.stk = Stack([1, 2])
+
+        self.assertIsInstance(self.stk, Stack)
+        self.assertEqual(self.stk.items, [1, 2])
+
 if __name__ == '__main__':
     unittest.main()
