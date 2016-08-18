@@ -9,9 +9,12 @@ Code to implement various algorithms.
 * [Doubly Linked List](https://github.com/mohrtw/algorithms/tree/master/algorithms/dataStructures/DoublyLinkedList.py)
 * [Queue](https://github.com/mohrtw/algorithms/blob/master/algorithms/dataStructures/queue.py)
 * [Stack](https://github.com/mohrtw/algorithms/blob/master/algorithms/dataStructures/stack.py)
+* [UnionFind](https://github.com/mohrtw/algorithms/blob/master/algorithms/dataStructures/UnionFind.py)
 
 ## Graphs
 * [breadth-first search - shortest distance](https://github.com/mohrtw/algorithms/blob/master/algorithms/graphs/breadthFirstSearch.py)
+* [Kruskal's minimum spanning tree](https://github.com/mohrtw/algorithms/blob/master/algorithms/graphs/KruskalMST.py)
+* [Kruskal's clustering](https://github.com/mohrtw/algorithms/blob/master/algorithms/graphs/KruskalClustering.py)
 
 ## Sorting
 * [bubble sort](https://github.com/mohrtw/algorithms/blob/master/algorithms/sorting/bubbleSort.py)

@@ -86,4 +86,5 @@ class HashTable(object):
         self._buckets.extend([[]] * self.size)
         self.size *= 2
 
-# TODO : implement __delitem__
+# TODO : rehash when _increase_buckets is called
+
